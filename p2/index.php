@@ -26,8 +26,59 @@
 
 // <!-- Variabel dan tipe data -->
 // <!-- Variabel -->
-$nama = "Reissal";
+// Variabel tidak boleh diawali dengan angka, tapi boleh mengandung angka
+// $nama = "rifqi Reissal";
+// $nama1 = "Arasy";
 
+// echo "Halo, Nama saya $nama"; //interpolasi: apakah di dalam string ada variabel atau tidak, kalau ada yang ditampilkan brarti isi dari variabel
+// echo 'Halo, Nama saya $nama'; //interpolasi tidak jalan 
+
+// Operator
+// Aritmatika = + - * / %
+// $x = 10;
+// $y = 10;
+
+// echo $x + $y;
+// echo 1 + 2;
+
+// Penggabung String / concat
+// . 
+// $first_name = "Rifqi";
+// $last_name = "Arasy";
+
+// echo $first_name . " " . $last_name;
+
+
+// Assignment
+// =, +=, -=, *=, /=, %=, .=
+// $x = 1;
+// $x += 5;
+// echo $x;
+
+// $nama = "Rifqii";
+// $nama .= " ";
+// $nama .= "Arasyy";
+// echo $nama;
+
+//Perbandingan 
+// <, >, <=, >=, ==, !=
+
+// var_dump(1 > 5);
+// var_dump(1 < 5);
+// var_dump(1 == 5);
+// var_dump(1 == "1");
+
+// // identitas
+// //===, !==
+// var_dump(1 === "1");
+
+// logika
+// &&, ||, !
+
+$x = 30;
+
+var_dump($x < 20 && $x %2 == 0);
+var_dump($x < 20 || $x %2 == 0);
 
 ?>
 
