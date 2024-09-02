@@ -1,6 +1,7 @@
 <!-- Array Numeric -->
 
 <?php 
+// Array multi-dimensi
 $mahasiswa = [
     ["Rifqi Reissal Arasy", 1201230038, "Software Engineer", "rifqiarasy@telkomuniversity.ac.id"],
     ["Rifqi Reissal Arasy", 1201230039, "Software Engineer", "rifqiarasy@telkomuniversity.ac.id"],
