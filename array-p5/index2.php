@@ -14,7 +14,7 @@ $angka = [2,3,4,5,100,6,90,50,70];
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>index 2</title>
     <style>
-        .kotak {
+        .box {
             width: 50px;
             height: 50px;    
             background-color: salmon;
@@ -33,20 +33,20 @@ $angka = [2,3,4,5,100,6,90,50,70];
 <body>
     <!-- For -->
     <?php for($i = 0; $i < count($angka); $i++ ) { ?>
-    <div class = "kotak"><?php echo $angka[$i]; ?></div>
+    <div class = "box"><?php echo $angka[$i]; ?></div>
     <?php } ?>
 
     <div class="clear"></div>
 
     <!-- Foreach -->
     <?php foreach( $angka as $a ) { ?>
-        <div class = "kotak"><?php echo $a?></div>
+        <div class = "box"><?php echo $a?></div>
     <?php } ?>
 
     <div class="clear"></div>
 
     <?php foreach ($angka as $a ) : ?>
-        <div class = "kotak"><?= $a?></div>
+        <div class = "box"><?= $a?></div>
     <?php endforeach ; ?>
 </body>
 </html>
