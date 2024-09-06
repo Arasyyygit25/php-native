@@ -3,7 +3,7 @@
 if( isset($_POST["submit"]) ){
 
 // cek username & password
-    if( $_POST["username"] == "admin" && $_POST["password"] == "12") {
+    if( $_POST["username"] == "admin" && $_POST["password"] == "123") {
 
 // jika benar, redirect ke halaman admin
     header("Location: admin.php");
