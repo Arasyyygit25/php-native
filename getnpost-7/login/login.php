@@ -1,11 +1,18 @@
 <?php
 // cek apakah tombol submit sudah tekan atau belum
+if( isset($_POST["submit"]) ){
 
 // cek username & password
+    if( $_POST["username"] == "admin" && ["password"] == "123") {
 
 // jika benar, redirect ke halaman admin
-
-//jika salah, tampilkan pesan kesalahan
+    header("Location: admin.php");
+    
+    //jika salah, tampilkan pesan kesalahan
+    } else {
+        $error= true;
+    }
+}
 ?>
 
 
@@ -31,6 +38,11 @@
         <label for="password">Password : </label>
         <input type="password" name="password" id="password">
     </li>
+
+    <!-- ketika username dan password salah -->
+    <?php if ( isset ($error)) :?>
+    <p style= "color: red; font-style: italic;">Username / password salah!</p>
+    <?php endif; ?>
     <li>
         <button type="submit" name="submit">Login</button>
     </li>
