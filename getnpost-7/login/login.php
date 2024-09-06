@@ -3,19 +3,18 @@
 if( isset($_POST["submit"]) ){
 
 // cek username & password
-    if( $_POST["username"] == "admin" && ["password"] == "123") {
+    if( $_POST["username"] == "admin" && $_POST["password"] == "12") {
 
 // jika benar, redirect ke halaman admin
     header("Location: admin.php");
-    
-    //jika salah, tampilkan pesan kesalahan
+    exit;
+
     } else {
+        //jika salah, tampilkan pesan kesalahan
         $error= true;
     }
 }
 ?>
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -40,7 +39,7 @@ if( isset($_POST["submit"]) ){
     </li>
 
     <!-- ketika username dan password salah -->
-    <?php if ( isset ($error)) :?>
+    <?php if ( isset ($error) ) : ?>
     <p style= "color: red; font-style: italic;">Username / password salah!</p>
     <?php endif; ?>
     <li>
