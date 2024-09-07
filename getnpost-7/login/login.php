@@ -22,32 +22,93 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+    <style>
+        
+       body{
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        justify-content: center;
+        padding: 0;
+        margin: 0;
+        align-items: center;
+        height: 100vh;
+        display: flex;
+       }
+
+       #form{
+        background-color: white;
+        padding: 40px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        width: 300px;
+        text-align: center;
+       }
+
+       h1{
+        font-size: 24px;
+        margin-bottom: 20px;
+        color: #333;
+        }
+
+        label{
+            display: block;
+            text-align: left;
+            margin-bottom: 5px;
+            font-size: 14px;
+            color: #333;
+        }
+
+        input[type="text"], input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 20px;
+            box-sizing: border-box;
+            font-size: 14px;
+        }
+
+        button{
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        
+        button:hover {
+            background-color: #45a049;
+        }
+
+        p {
+            color: red;
+            font-style: italic;
+        }
+    </style>
 </head>
 <body>
     
-<h1>Login Admin</h1>
+    <div id="form">
+        <h1>Login Admin</h1>
 
-<ul>
-<form action="admin.php" method="post">
-    <li>
-        <label for="username">Username : </label>
-        <input type="text" name="username" id="username">
-    </li>
-    <li>
-        <label for="password">Password : </label>
-        <input type="password" name="password" id="password">
-    </li>
+        <form action="admin.php" method="post">
+            <label for="username">Username:</label>
+            <input type="text" name="username" id="username" required>
 
-    <!-- ketika username dan password salah -->
-    <?php if ( isset ($error) ) : ?>
-    <p style= "color: red; font-style: italic;">Username / password salah!</p>
-    <?php endif; ?>
-    <br>
-    <li>
-        <button type="submit" name="submit">Login</button>
-    </li>
-</form>
-</ul>
+            <label for="password">Password:</label>
+            <input type="password" name="password" id="password" required>
+
+            <!-- ketika username dan password salah -->
+            <?php if ( isset ($error) ) : ?>
+            <p>Username / password salah!</p>
+            <?php endif; ?>
+            
+            <button type="submit" name="submit">Login</button>
+        </form>
+    </div>
 
 </body>
 </html>

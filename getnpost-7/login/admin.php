@@ -7,7 +7,10 @@
 </head>
 <body>
     
-<h2>Welcome Admin, <?= $_POST["username"]; ?>!</h2>
+<?php if( isset($_POST["submit"]) ) : ?>
+    <h2>Welcome Admin, <?= $_POST["username"]; ?>!</h2>
+<?php endif; ?>
+
 
 <a href="login.php">Logout</a>
 
