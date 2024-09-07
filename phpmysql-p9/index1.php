@@ -1,11 +1,12 @@
 <?php
 //mengambil data dari file function
 require 'function.php';
+$mahasiswa = query("SELECT * FROM mahasiswa");
     //koneksi ke database
-$conn = mysqli_connect("localhost", "root", "", "phpdasar");
+// $conn = mysqli_connect("localhost", "root", "", "phpdasar");
 
-    //ambil data dari tabel mahasiswa
-$result = mysqli_query($conn, "SELECT * FROM mahasiswa");
+//     //ambil data dari tabel mahasiswa
+// $result = mysqli_query($conn, "SELECT * FROM mahasiswa");
 
     //ambil data (fetch) dari object result 
     //mysqli_fetch_row() = mengembalikan array numeric
@@ -77,6 +78,20 @@ $result = mysqli_query($conn, "SELECT * FROM mahasiswa");
     </tr>
     <?php $i++ ?>
     <?php endwhile; ?>
+    
+    <!-- tidak akan menggunakan while lagi, tapi menggunakan foreach -->
+    <?php $i = 1; ?>
+    <?php foreach ( $mahasiswa as $row) :?>
+    <tr>
+        <td><?= $i; ?></td>
+        <td><a href="">Ubah</a> | <a href="">Hapus</a></td>
+        <td><?= $row["nama"]; ?></td>
+        <td><?= $row["nim"]; ?></td>
+        <td><?= $row["email"]; ?></td>
+        <td><?= $row["jurusan"]; ?></td>
+    </tr>
+    <?php $i++ ?>
+    <?php endforeach; ?>
     </table>
 </body>
 </html>
