@@ -71,10 +71,10 @@
         button{
             width: 100%;
             padding: 10px;
-            background-color: #4CAF50;
+            background-color: #4CAE30;
             color: white;
             border: none;
-            border-radius: 4px;
+            border-radius: 20px;
             font-size: 16px;
             cursor: pointer;
         }
