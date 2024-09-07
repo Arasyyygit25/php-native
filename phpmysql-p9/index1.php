@@ -1,4 +1,6 @@
 <?php
+//mengambil data dari file function
+require 'function.php';
     //koneksi ke database
 $conn = mysqli_connect("localhost", "root", "", "phpdasar");
 
@@ -11,17 +13,32 @@ $result = mysqli_query($conn, "SELECT * FROM mahasiswa");
     //mysqli_fetch_array() = mengembalikan array kedua dua nya
     //mysqli_fetch_object()
 
-    //barang dikasih nomor
-$mhs = mysqli_fetch_row($result);
-    var_dump($mhs[1]);
+    //barang dikasih nomor/index
+    // $mhs = mysqli_fetch_row($result);
+    // var_dump($mhs[1]);
 
-    //barang dikasih nama
-$mhs = mysqli_fetch_assoc($result);
-var_dump($mhs["jurusan"]);
+    //barang dikasih nama/string namun yang keluar hanya 1 nama
+    // $mhs = mysqli_fetch_assoc($result);
+    // var_dump($mhs["nama"]);
+
+    //data nama keluar semua
+    // while ( $mhs = mysqli_fetch_assoc($result) ) {
+    // var_dump($mhs["nama"]);
+    // }
+
+    // data di dalam tabel akan keluar semua
+    // while ( $mhs = mysqli_fetch_assoc($result) ) {
+    //     var_dump($mhs);
+    //     }
 
 //lebih fleksibel bisa menggunakan index dan string, tapi output ke double
-$mhs = mysqli_fetch_array($result);
-var_dump($mhs["jurusan"]);
+    // $mhs = mysqli_fetch_array($result);
+    // var_dump($mhs["jurusan"]);
+
+// //jarang digunakan
+// $mhs = mysqli_fetch_object($result);
+// var_dump($mhs->nama);
+
 
 
 ?>
@@ -47,14 +64,19 @@ var_dump($mhs["jurusan"]);
         <th>Jurusan</th>
     </tr>
 
+    <!-- analogi: teman bawa lemari keluar -->
+    <?php $i = 1; ?>
+    <?php while ( $row = mysqli_fetch_assoc($result) ) :?>
     <tr>
-        <td>1</td>
+        <td><?= $i; ?></td>
         <td><a href="">Ubah</a> | <a href="">Hapus</a></td>
-        <td>Rifqi Reissal Arasy</td>
-        <td>1201230038</td>
-        <td>arasy@gmail.com</td>
-        <td>Software Engineer</td>
+        <td><?= $row["nama"]; ?></td>
+        <td><?= $row["nim"]; ?></td>
+        <td><?= $row["email"]; ?></td>
+        <td><?= $row["jurusan"]; ?></td>
     </tr>
+    <?php $i++ ?>
+    <?php endwhile; ?>
     </table>
 </body>
 </html>
