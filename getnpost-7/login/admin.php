@@ -7,7 +7,7 @@
 </head>
 <body>
     
-<h2>Welcome Admin!</h2>
+<h2>Welcome Admin, <?= $_POST["username"]; ?>!</h2>
 
 <a href="login.php">Logout</a>
 

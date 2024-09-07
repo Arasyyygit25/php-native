@@ -1,19 +1,19 @@
 <?php
 // cek apakah tombol submit sudah tekan atau belum
-if( isset($_POST["submit"]) ){
+// if( isset($_POST["submit"]) ){
 
-// cek username & password
-    if( $_POST["username"] == "admin" && $_POST["password"] == "123") {
+// // cek username & password
+//     if( $_POST["username"] == "admin" && $_POST["password"] == "123") {
 
-// jika benar, redirect ke halaman admin
-    header("Location: admin.php");
-    exit;
+// // jika benar, redirect ke halaman admin
+//     header("Location: admin.php");
+//     exit;
 
-    } else {
-        //jika salah, tampilkan pesan kesalahan
-        $error= true;
-    }
-}
+//     } else {
+//         //jika salah, tampilkan pesan kesalahan
+//         $error= true;
+//     }
+// }
 ?>
 
 <!DOCTYPE html>
@@ -28,7 +28,7 @@ if( isset($_POST["submit"]) ){
 <h1>Login Admin</h1>
 
 <ul>
-<form action="" method="post">
+<form action="admin.php" method="post">
     <li>
         <label for="username">Username : </label>
         <input type="text" name="username" id="username">
@@ -42,6 +42,7 @@ if( isset($_POST["submit"]) ){
     <?php if ( isset ($error) ) : ?>
     <p style= "color: red; font-style: italic;">Username / password salah!</p>
     <?php endif; ?>
+    <br>
     <li>
         <button type="submit" name="submit">Login</button>
     </li>
