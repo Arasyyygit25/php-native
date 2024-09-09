@@ -1,6 +1,6 @@
-<?php
-// $_GET: metode pengiriman data melalui url dan data tersebut bisa diambil dan ditangkap oleh variabel auperglobal $_GET
+ <!-- $_GET: metode pengiriman data melalui url dan data tersebut bisa diambil dan ditangkap oleh variabel auperglobal $_GET -->
 
+<?php
 $mahasiswa2 = [
     [
         "nama" => "Rifqi Arasy",
