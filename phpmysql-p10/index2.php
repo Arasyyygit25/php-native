@@ -34,7 +34,7 @@ $mahasiswa = query("SELECT * FROM mahasiswa");
     <?php foreach ( $mahasiswa as $row) :?>
     <tr>
         <td><?= $i; ?></td>
-        <td><a href="">Ubah</a> | <a href="">Hapus</a></td>
+        <td><a href="">Ubah</a> | <a href="hapus.php?id=<?= $row["id"]; ?>">Hapus</a></td>
         <td><?= $row["nama"]; ?></td>
         <td><?= $row["nim"]; ?></td>
         <td><?= $row["email"]; ?></td>

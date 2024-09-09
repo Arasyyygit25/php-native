@@ -20,10 +20,10 @@
       global $conn;
 
       // ambil data dari tiap elemen dalam form, ditampung dalam variabel
-      $nama = $_POST["nama"];
-      $nim = $_POST["nim"];
-      $email = $_POST["email"];
-      $jurusan = $_POST["jurusan"];
+      $nama = htmlspecialchars($data["nama"]); //fungsi dari htmlspecialchars, adalah menjaga security web agar ketika menginputkan data lalu menulis dengan query yang aneh aneh akan diolah terlebih dahulu lalu berubah mmenjadi text html
+      $nim = htmlspecialchars($data["nim"]);
+      $email = htmlspecialchars($data["email"]);
+      $jurusan = htmlspecialchars($data["jurusan"]);
 
       //query insert data, jika tidak ditampung ke dalam variabel maka akan error perkara kutip, jadi kita tidak perlu mikir kutip error nya
       $query = "INSERT INTO mahasiswa

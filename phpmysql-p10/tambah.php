@@ -18,7 +18,12 @@ if ( isset($_POST["submit"]) ) {
         </script>
         ";
     } else {
-        echo "data salah";
+        echo "
+        <script>
+            alert('Data Telah Berhasil ditambahkan');
+            document.location.href = 'index2.php';
+        </script>
+        ";
     }
 }
     
