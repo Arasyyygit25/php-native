@@ -47,6 +47,7 @@ if ( isset($_POST["submit"]) ) {
     <h1>Ubah data mahasiswa</h1>
 
     <form action="" method="post">
+        <input type="hidden" name="id" value="<?= $mhs ["id"];?>">
         <ul>
             <li>
                 <label for="nama">Nama: </label>
@@ -54,15 +55,15 @@ if ( isset($_POST["submit"]) ) {
             </li>
             <li>
                 <label for="nim">NIM: </label>
-                <input type="text" name="nim" id="nim">
+                <input type="text" name="nim" id="nim" value="<?= $mhs["nim"]; ?>">
             </li>
             <li>
                 <label for="email">Email: </label>
-                <input type="text" name="email" id="email">
+                <input type="text" name="email" id="email" value="<?= $mhs["email"]; ?>">
             </li>
             <li>
                 <label for="jurusan">Jurusan: </label>
-                <input type="text" name="jurusan" id="jurusan">
+                <input type="text" name="jurusan" id="jurusan" value="<?= $mhs["jurusan"]; ?>">
             </li>
             <li>
                 <button type="submit" name="submit">Ubah Data</button>
