@@ -2,8 +2,10 @@
 require 'functions.php';
 $mahasiswa = query("SELECT * FROM mahasiswa");
 
-// namun ketika tombol cari ditekan maka akan 
-
+// namun ketika tombol cari ditekan maka akan ditimpa dengan sesuai pencarian
+if ( isset($_POST["cari"]) ){
+    $mahasiswa = cari($_POST["keyword"]); //
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
