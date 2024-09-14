@@ -3,6 +3,7 @@ require 'functions.php';
 
 if ( isset($_POST["submit"]) ) {
 
+
     // if(tambah($_POST) > 0){
     //     echo "data berhasil ditambahkan!";
     // } else {
@@ -39,7 +40,8 @@ if ( isset($_POST["submit"]) ) {
 <body>
     <h1>Tambah data mahasiswa</h1>
 
-    <form action="" method="post">
+    <!-- seolah olah form nya memiliki 2 buah jalur pengelolaan, untuk string akan dikelola oleh $post dan untuk file akan dikelolah $_FILE, lalu syaratnya harus ada enctype-->
+    <form action="" method="post" enctype="multipart/form-data"> 
         <ul>
             <li>
                 <label for="nama">Nama: </label>
@@ -56,6 +58,10 @@ if ( isset($_POST["submit"]) ) {
             <li>
                 <label for="jurusan">Jurusan: </label>
                 <input type="text" name="jurusan" id="jurusan">
+            </li>
+            <li>
+                <label for="gambar">Gambar: </label>
+                <input type="file" name="jurusan" id="gambar">
             </li>
             <li>
                 <button type="submit" name="submit">Tambah Data</button>
