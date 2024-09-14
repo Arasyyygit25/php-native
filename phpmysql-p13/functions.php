@@ -67,6 +67,22 @@
             </script>";
             return false;
       }
+
+      // cek jika ukurannya terlalu besar
+      if ( $ukuranFile > 1000000){
+        echo "<script>
+              alert('Ukuran Gambar Terlalu Besar!');
+              </script>";
+            return false;
+      }
+
+      //lolos pengecekan, gambar siap di upload
+      //generate nama gambar baru (paling gampang bangkitkan bilangan random, kita ambil bilangan itu)
+      $namaFileBaru = uniqid(); //akan membangkitkan string random/angka yang akan menjadi nama file gambar kita (jika kembar namanya)
+      $namaFileBaru .= '.';
+      $namaFileBaru .= $ekstensiGambar;
+      move_uploaded_file($tmpName, 'img/' . $namaFileBaru);
+      return $namaFileBaru; //jika gambar berhasil di upload maka data akan berisi nama file nya di database nya
     }
 
     function ubah($data) {
