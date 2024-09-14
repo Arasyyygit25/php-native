@@ -25,15 +25,23 @@
       $email = htmlspecialchars($data["email"]);
       $jurusan = htmlspecialchars($data["jurusan"]);
 
+     //upload gambar
+     $gambar = upload();
+     if( !$gambar ){
+      return false;
+     }
+
       //query insert data, jika tidak ditampung ke dalam variabel maka akan error perkara kutip, jadi kita tidak perlu mikir kutip error nya
       $query = "INSERT INTO mahasiswa
                     VALUES
-                    ('', '$nama', '$nim', '$email', '$jurusan') 
+                    ('', '$nama', '$nim', '$email', '$jurusan', '$gambar') 
                     ";
         mysqli_query($conn, $query);
       //cek apakah data berhasil di tambahkan atau tidak
         return mysqli_affected_rows($conn);
     }
+
+    funvt
 
     function ubah($data) {
       global $conn;
@@ -44,6 +52,7 @@
       $nim = htmlspecialchars($data["nim"]);
       $email = htmlspecialchars($data["email"]);
       $jurusan = htmlspecialchars($data["jurusan"]);
+      $gambar = htmlspecialchars($data["gambar"]);
 
       //query insert data, jika tidak ditampung ke dalam variabel maka akan error perkara kutip, jadi kita tidak perlu mikir kutip error nya
       $query = "UPDATE mahasiswa SET
@@ -51,6 +60,7 @@
                   nim = '$nim',
                   email = '$email',
                   jurusan = '$jurusan'
+                  gambar = '$gambar'
                   WHERE id = $id
                     ";
         mysqli_query($conn, $query);
