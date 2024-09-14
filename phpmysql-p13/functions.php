@@ -55,6 +55,18 @@
               </script>";
         return false; //setelah pesan nya tampil kita berhentikan function nya, supaya ngasih tau kalau function upload nya gagal jadi function tambah nya gagal juga 
       }
+
+      // cek apakah yang diupload adalah gambar
+      $ekstensiGambarValid = ['jpg', 'jpeg', 'png'];
+      $ekstensiGambar = explode('.', $namaFile); //memecah sebuah string menjadi Array, dengan delimiter
+      $ekstensiGambar = strtolower(end($ekstensiGambar));
+
+      if( !in_array($ekstensiGambar, $ekstensiGambarValid) ){
+        echo "<script>
+              alert('yang anda upload bukan gambar!');
+            </script>";
+            return false;
+      }
     }
 
     function ubah($data) {
