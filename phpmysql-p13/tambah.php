@@ -14,14 +14,14 @@ if ( isset($_POST["submit"]) ) {
     if( tambah($_POST) > 0 ) {
         echo "
         <script>
-            alert('Data Telah Berhasil ditambahkan');
+            alert('Data Telah Berhasil ditambahkan!');
             document.location.href = 'index2.php';
         </script>
         ";
     } else {
         echo "
         <script>
-            alert('Data Telah Berhasil ditambahkan');
+            alert('Data gagal ditambahkan!');
             document.location.href = 'index2.php';
         </script>
         ";
@@ -61,7 +61,7 @@ if ( isset($_POST["submit"]) ) {
             </li>
             <li>
                 <label for="gambar">Gambar: </label>
-                <input type="file" name="jurusan" id="gambar">
+                <input type="file" name="gambar" id="gambar">
             </li>
             <li>
                 <button type="submit" name="submit">Tambah Data</button>

@@ -41,7 +41,21 @@
         return mysqli_affected_rows($conn);
     }
 
-    funvt
+    function upload(){
+      // ambil dulu isi dari $_files, tiap tiap data nya kita masukkan ke dalam variabel
+      $namaFile = $_FILES['gambar']['name'];
+      $ukuranFile = $_FILES['gambar']['size'];
+      $error = $_FILES['gambar']['error'];
+      $tmpName = $_FILES['gambar']['tmp_name'];
+
+      //cek apakah tidak ada gambar di upload
+      if( $error === 4 ) {
+        echo"<script>
+              alert('pilih gambar terlebih dahulu!');
+              </script>";
+        return false; //setelah pesan nya tampil kita berhentikan function nya, supaya ngasih tau kalau function upload nya gagal jadi function tambah nya gagal juga 
+      }
+    }
 
     function ubah($data) {
       global $conn;
