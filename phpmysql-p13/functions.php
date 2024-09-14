@@ -94,7 +94,15 @@
       $nim = htmlspecialchars($data["nim"]);
       $email = htmlspecialchars($data["email"]);
       $jurusan = htmlspecialchars($data["jurusan"]);
-      $gambar = htmlspecialchars($data["gambar"]);
+      $gambarLama = htmlspecialchars($data["gambarLama"]);
+
+      //cek apakah user pilih gambar baru atau tidak
+      if( $_FILES['gambar']['error'] === 4 ){ 
+        $gambar = $gambarLama;
+      } else {
+        $gambar = upload();
+      }
+      
 
       //query insert data, jika tidak ditampung ke dalam variabel maka akan error perkara kutip, jadi kita tidak perlu mikir kutip error nya
       $query = "UPDATE mahasiswa SET
@@ -113,7 +121,6 @@
     function hapus($id){
       global $conn;
       mysqli_query($conn, "DELETE FROM mahasiswa WHERE id = $id");
-      
       return mysqli_affected_rows($conn);
     }
 
