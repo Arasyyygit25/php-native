@@ -147,6 +147,7 @@
         echo "<script>
               alert('konfirmasi password tidak sesuai!');
               </script>";
+              return false;
       }
     }
 
