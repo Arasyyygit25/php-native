@@ -141,6 +141,14 @@
       $password = mysqli_real_escape_string($conn, $data["password"]); //untuk memungkinkan user nya untuk memasukkan password ada tanda kutipnya, lalu tanda kutipnya dimasukkan ke dalam database secara aman
       $password2 = mysqli_real_escape_string($conn, $data["password2"]); 
 
+      // cek username sudah ada atau belum
+      $result = mysqli_query($conn, "SELECT username FROM user WHERE username = '$username'");
+      if( mysqli_fetch_assoc($result) ){
+        echo "script
+
+        ";
+      }
+
       // cek konfirmasi password
 
       if($password !== $password2 ){
@@ -149,6 +157,14 @@
               </script>";
               return false;
       }
+
+      //- enkripsi password -
+      //password_default, adalah algoritma yang dipilih secara default oleh phpnya, algoritma akan terus berubah ketika ada pengamanan baru
+      $password = password_hash($password, PASSWORD_DEFAULT); //jangan pake md5 lagi karena password jika menggunakan md5 lalu copas ke google, maka akan langsung mengetahui passwordnya
+
+      //tambahkan userbaru ke database
+      mysqli_query($conn, "INSERT INTO user VALUES('', '$username', '$password')");
+      return mysqli_affected_rows($conn);
     }
 
 
